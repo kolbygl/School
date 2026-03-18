@@ -27,8 +27,8 @@ lat2=float(input("What is your second latitude value?:"))
 def SphDist(long1,lati1,long2,lati2):
     radlong1=math.radians(long1)
     radlati1=math.radians(lati1)
-    radlon2=math.radians(long2)
-    radlat2=math.radians(lati2)
+    radlong2=math.radians(long2)
+    radlati2=math.radians(lati2)
     sublong=(radlong1-radlong2)/2
     sublat=(radlati1-radlati2)/2
     a=math.sin(sublat)**2 + math.cos(radlati1) *math.cos(radlati2) *math.sin(sublong)**2
@@ -48,9 +48,9 @@ line2=LineString([(2,0), (3,8)])
 line3=LineString([(2,0), (4,0)])
 def lineInt(line, lineComp):
   if line.intersects(lineComp):
-    print("A line between", line, "and a line between", lineComp, "do intersect")
+    print("These lines do intercept")
   else:
-    print("A line between", line, "and a line between", lineComp, "do NOT intersect")
+    print("These lines do not intercept")
 print("Line Interception (Q4)")
 lineInt(line1, line2)
 lineInt(line1, line3)
@@ -64,9 +64,9 @@ rectangle= Polygon(coords)
 
 def pointContains(shape, point, coordinates):
   if shape.contains(point):
-    print("point ", point," is inside of shape with vertices at", coordinates)
+    print( point," is inside of shape with vertices at", coordinates)
   else:
-    print("point ", point," is outside of shape with vertices at", coordinates)
+    print( point," is outside of shape with vertices at", coordinates)
 
 print("Point in a polygon (Q5)")
 pointContains(rectangle, point1, coords)
