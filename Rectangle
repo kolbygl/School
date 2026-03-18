@@ -1,0 +1,19 @@
+from shapely.geometry import Point, Polygon
+corner1= (0,0)
+corner2=(5,0)
+x2=(5,10)
+y2=(0,10)
+point1= Point(1,1)
+point2=Point(13,5)
+rectangle= Polygon(x, y, x2, y2)
+
+def pointContains(shape, point):
+if shape.contains(point):
+  print("point is inside of shape")
+else:
+  print("point is outside of shape")
+
+print("Point in a polygon (Q5)"
+pointContains(rectangle, point1)
+pointContains(rectangle, point2)
+
