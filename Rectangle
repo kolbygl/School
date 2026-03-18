@@ -5,10 +5,10 @@ point2=Point(13,5)
 rectangle= Polygon(coords)
 
 def pointContains(shape, point):
-if shape.contains(point):
-  print("point is inside of shape")
-else:
-  print("point is outside of shape")
+  if shape.contains(point):
+    print("point is inside of shape")
+  else:
+    print("point is outside of shape")
 
 print("Point in a polygon (Q5)")
 pointContains(rectangle, point1)
