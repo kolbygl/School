@@ -16,12 +16,13 @@ def EucDistance(x,y,x1,y1):
 print("Euclidean Distance (Q1 and Q2)")
 EucDistance(valuex1, valuey1, valuex2, valuey2)
 EucDistance(2,5,10,6)
+print("")
 
 #Begin Spherical
-#lon=math.radians(float(input("What is your first longitude value?:")))
-#lat=math.radians(float(input("What is your first latitude value?:")))
-#lon2=math.radians(float(input("What is your second longitude value?:")))
-#lat2=math.radians(float(input("What is your second latitude value?:")))
+lon=math.radians(float(input("What is your first longitude value?:")))
+lat=math.radians(float(input("What is your first latitude value?:")))
+lon2=math.radians(float(input("What is your second longitude value?:")))
+lat2=math.radians(float(input("What is your second latitude value?:")))
 
 def SphDist(long1,lati1,long2,lati2):
     sublong=(long1-long2)/2
@@ -32,9 +33,10 @@ def SphDist(long1,lati1,long2,lati2):
     print("the spherical distance for (", lati1,",", long1,")"," and ","(", lati2,",", long1,")" ," is:", SphD,"kms")
 
 print("Spherical Distance (Q3)")
-#SphDist(lon,lat,lon2,lat2)
+SphDist(lon,lat,lon2,lat2)
 #^Input reliant function
 SphDist(151,-33,-88,40)
+print("")
 
 #Q3/4 line intersections
 line1=LineString([(1,0), (4,6)])
@@ -42,12 +44,13 @@ line2=LineString([(2,0), (3,8)])
 line3=LineString([(2,0), (4,0)])
 def lineInt(line, lineComp):
   if line.intersects(lineComp):
-    print("Intersect")
+    print("A line between", line, "and a line between", lineComp, "do intersect")
   else:
-    print("Lines do not intersect"
+    print("A line between", line, "and a line between", lineComp, "do NOT intersect")
 print("Line Interception (Q4)")
 lineInt(line1, line2)
 lineInt(line1, line3)
+print("")
 
 #Q5 Polygon
 coords=[(0,0), (5,0), (5,10), (0,10)]
@@ -55,12 +58,12 @@ point1= Point(1,1)
 point2=Point(13,5)
 rectangle= Polygon(coords)
 
-def pointContains(shape, point):
+def pointContains(shape, point, coordinates):
   if shape.contains(point):
-    print("point is inside of shape")
+    print("point ", point," is inside of shape with vertices at", coordinates)
   else:
-    print("point is outside of shape")
+    print("point ", point," is outside of shape with vertices at", coordinates)
 
 print("Point in a polygon (Q5)")
-pointContains(rectangle, point1)
-pointContains(rectangle, point2)
+pointContains(rectangle, point1, coords)
+pointContains(rectangle, point2, coords)
