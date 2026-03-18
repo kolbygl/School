@@ -1,0 +1,7 @@
+from shapely import Point, LineString
+line1=LineString([(1,0), (4,6)])
+line2=LineString([(2,0), (3,8)])
+if line1.intersects(line2):
+  print("Intersect")
+else:
+  print("Lines do not intersect"
