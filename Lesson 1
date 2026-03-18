@@ -19,15 +19,19 @@ EucDistance(2,5,10,6)
 print("")
 
 #Begin Spherical
-lon=math.radians(float(input("What is your first longitude value?:")))
-lat=math.radians(float(input("What is your first latitude value?:")))
-lon2=math.radians(float(input("What is your second longitude value?:")))
-lat2=math.radians(float(input("What is your second latitude value?:")))
+lon=float(input("What is your first longitude value?:"))
+lat=float(input("What is your first latitude value?:"))
+lon2=float(input("What is your second longitude value?:"))
+lat2=float(input("What is your second latitude value?:"))
 
 def SphDist(long1,lati1,long2,lati2):
-    sublong=(long1-long2)/2
-    sublat=(lati1-lati2)/2
-    a=math.sin(sublat)**2 + math.cos(lati1) *math.cos(lati2) *math.sin(sublong)**2
+    radlong1=math.radians(long1)
+    radlati1=math.radians(lati1)
+    radlon2=math.radians(long2)
+    radlat2=math.radians(lati2)
+    sublong=(radlong1-radlong2)/2
+    sublat=(radlati1-radlati2)/2
+    a=math.sin(sublat)**2 + math.cos(radlati1) *math.cos(radlati2) *math.sin(sublong)**2
     c=2*(math.asin(math.sqrt(a)))
     SphD=round((6371.0*c),3)
     print("the spherical distance for (", lati1,",", long1,")"," and ","(", lati2,",", long1,")" ," is:", SphD,"kms")
