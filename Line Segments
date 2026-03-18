@@ -7,5 +7,6 @@ def lineInt(line, lineComp):
     print("Intersect")
   else:
     print("Lines do not intersect"
-print("
-
+print("Line Interception (Q4)")
+lineInt(line1, line2)
+lineInt(line1, line3)
