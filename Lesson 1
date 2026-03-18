@@ -1,0 +1,37 @@
+import math
+
+#Begin Euclidean
+valuex1=int(input("What is your first x value?:"))
+valuex2=int(input("What is your second x value?:"))
+valuey1=int(input("What is your first y value?:"))
+valuey2=int(input("What is your second y value?:"))
+
+def EucDistance(x,y,x1,y1):
+    xsquare=(x-x1)**2
+    ysquare=(y-y1)**2
+    distance= round((math.sqrt(xsquare + ysquare)),3)
+    print("the euclidean distance for (", x,",", y,")"," and ","(", x1,",", y1,")" ," is:", distance)
+
+print("Euclidean Distance (Q1 and Q2)")
+EucDistance(valuex1, valuey1, valuex2, valuey2)
+EucDistance(2,5,10,6)
+
+#Begin Spherical
+#lon=math.radians(float(input("What is your first longitude value?:")))
+#lat=math.radians(float(input("What is your first latitude value?:")))
+#lon2=math.radians(float(input("What is your second longitude value?:")))
+#lat2=math.radians(float(input("What is your second latitude value?:")))
+
+def SphDist(long1,lati1,long2,lati2):
+    sublong=(long1-long2)/2
+    sublat=(lati1-lati2)/2
+    a=math.sin(sublat)**2 + math.cos(lati1) *math.cos(lati2) *math.sin(sublong)**2
+    c=2*(math.asin(math.sqrt(a)))
+    SphD=round((6371.0*c),3)
+    print("the spherical distance for (", lati1,",", long1,")"," and ","(", lati2,",", long1,")" ," is:", SphD,"kms")
+
+print("Spherical Distance (Q3)")
+#SphDist(lon,lat,lon2,lat2)
+#^Input reliant function
+SphDist(151,-33,-88,40)
+
