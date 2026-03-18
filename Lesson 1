@@ -1,4 +1,5 @@
 import math
+from shapely import Point, LineString, Polygon
 
 #Begin Euclidean
 valuex1=int(input("What is your first x value?:"))
@@ -35,3 +36,14 @@ print("Spherical Distance (Q3)")
 #^Input reliant function
 SphDist(151,-33,-88,40)
 
+line1=LineString([(1,0), (4,6)])
+line2=LineString([(2,0), (3,8)])
+line3=LineString([(2,0), (4,0)])
+def lineInt(line, lineComp):
+  if line.intersects(lineComp):
+    print("Intersect")
+  else:
+    print("Lines do not intersect"
+print("Line Interception (Q4)")
+lineInt(line1, line2)
+lineInt(line1, line3)
