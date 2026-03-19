@@ -49,7 +49,7 @@ line2=LineString([(2,0), (3,8)])
 line3=LineString([(2,0), (4,0)])
 def lineInt(line, lineComp):
   if line.intersects(lineComp):
-    print("These lines do intercept")
+    print("These lines do intercept (",line, " and ", lineComp))
   else:
     print("These lines do not intercept")
 print("Line Interception (Q4)")
