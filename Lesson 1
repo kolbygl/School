@@ -13,11 +13,6 @@ def EucDistance(x,y,x1,y1):
     distance= round((math.sqrt(xsquare + ysquare)),3)
     print("the euclidean distance for (", x,",", y,")"," and ","(", x1,",", y1,")" ," is:", distance)
 
-print("Euclidean Distance (Q1 and Q2)")
-EucDistance(valuex1, valuey1, valuex2, valuey2)
-EucDistance(2,5,10,6)
-print("")
-
 #Begin Spherical
 lon=float(input("What is your first longitude value?:"))
 lat=float(input("What is your first latitude value?:"))
@@ -35,6 +30,12 @@ def SphDist(long1,lati1,long2,lati2):
     c=2*(math.asin(math.sqrt(a)))
     SphD=round((6371.0*c),3)
     print("the spherical distance for (", lati1,",", long1,")"," and ","(", lati2,",", long1,")" ," is:", SphD,"kms")
+
+#code for euc  for appearance
+print("Euclidean Distance (Q1 and Q2)")
+EucDistance(valuex1, valuey1, valuex2, valuey2)
+EucDistance(2,5,10,6)
+print("")
 
 print("Spherical Distance (Q3)")
 SphDist(lon,lat,lon2,lat2)
